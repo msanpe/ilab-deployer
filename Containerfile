@@ -26,5 +26,6 @@ RUN mkdir -p /ilab-config && chmod 555 /ilab-config
 RUN mkdir -p /.local && chmod 777 /.local
 COPY ilab/config.yaml /ilab/
 COPY ilab/taxonomy/ /ilab/taxonomy/
+RUN chmod -R 777 /
 
 CMD ["tail", "-f", "/dev/null"]
