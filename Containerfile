@@ -1,17 +1,14 @@
-# Choose preferred distro
-FROM ubuntu:latest
+FROM fedora:latest
 
-ENV DEBIAN_FRONTEND=noninteractive
-
-RUN apt-get update && apt-get install -y \
+RUN dnf update -y && dnf install -y \
     nano \
-    g++ \
+    gcc-c++ \
     gcc \
     make \
     python3 \
     python3-pip \
-    python3-venv \
-    python3-dev \
+    python3-virtualenv \
+    python3-devel \
     git
 
 RUN mkdir /instructlab && python3 -m venv /instructlab
